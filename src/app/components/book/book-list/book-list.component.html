@@ -1,0 +1,25 @@
+
+<div class="container">
+  <a class="btn btn-primary" routerLink="create">Thêm sách</a>
+  <table class="table" routerLink="">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên sách</th>
+      <th scope="col">Tác Giả</th>
+      <th scope="col">\</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books;index as i">
+      <th scope="row">{{i+1}}</th>
+      <td><a routerLink="{{book.id}}/detail">{{book.title}}</a></td>
+      <td>{{book.author}}</td>
+      <td><a class="btn btn-danger" (click)="delete(book.id)">Xóa</a>
+        <a class="btn btn-warning" routerLink="{{book.id}}/edit" >Sửa</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
